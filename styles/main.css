@@ -1,0 +1,494 @@
+@font-face {
+  font-family: 'Eina01';
+  src: url('../assets/fonts/Elina/Eina01-Light.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Parfumerie';
+  src: url('../assets/fonts/Parfumerie/Parfumerie-Regular.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Eina01', sans-serif;
+    font-weight: 100;
+    background-color: #e2e4e9; 
+    color: #494b4f;
+    line-height: 1.6;
+  }
+
+  .flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    animation: flashOut 0.10s ease forwards;
+  }
+  
+  @keyframes flashOut {
+    0% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+  }  
+  
+
+  /* NAVIGATION BAR */
+  .navbar {
+    padding: 1rem 2rem;
+    background-color: #e2e4e9;
+  
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 6rem; /* spacing between items */
+    padding-top: 30px;
+    margin: 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #494b4f;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+    position: relative;
+    letter-spacing: 0.5px;
+  }
+  
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 0.7px;
+    background-color: #494b4f;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+  
+  .navbar a:hover::after {
+    transform: scaleX(1);
+  }  
+
+  .navbar a.active::after {
+    transform: scaleX(1);
+  }  
+  
+
+  /* MAIN ENVELOPE */
+  .env-container {
+    position: relative;
+    width: 90rem;
+    height: auto;
+  }
+
+  .env {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 1s ease 0.4s forwards;
+    /* height: 100vh; */
+    padding-top: 6px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideInUp 1s ease 0.4s forwards;
+  }
+  
+  @keyframes slideInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .env-img-top {
+    width: 60%;
+    margin-top: 100px;
+  }
+
+  .env-img-top-big {
+    width: 85%;
+    margin-top: 103px;
+    margin-bottom: 0px;
+  }
+
+  .env-img-bottom-big {
+    width: 84.5%;
+    margin-top: 0px;
+  }
+
+  .env-img-middle-big {
+    width: 84.5%;
+    margin-top: 0px;
+  }
+
+  .env-title {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  .line-1 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+  
+  .line-2, 
+  .line-3 {
+    font-size: 0.9rem;
+    font-weight: 100;
+    line-height: 1.1;
+  }
+
+  .env-sig {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  
+
+  .line-1-2, .line-2-2 {
+    font-family:'Courier New', Courier, monospace;
+  }
+  
+  .social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+  }
+  
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .social-icons img:hover {
+    filter: brightness(0.7);
+  }
+
+  .title {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    font-family: 'Parfumerie', cursive;
+    font-size: 150px;
+    top: 1%;
+    left: 35%;
+    transform: translateX(-50%);
+    line-height: 1;
+    padding-top: 30px;
+  }
+
+  /* PROJECTS PAGE */
+  .content-center {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .projects-container {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 6rem auto;
+    max-width: 100%;
+    padding-top: 240px;
+    padding-bottom: 0px;
+  }
+  
+  .project {
+    background-color: #ebece6;
+    width: 40%;
+    min-width: 490px;
+    height: 40%;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 12px;
+  }
+  
+  .project:hover {
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+  }
+  
+  .project-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 10px;
+  }
+  
+  .project-info {
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .proj-into-title {
+    margin-bottom: 0.2rem;
+    font-weight: 200;
+    font-size: 1.8rem;
+  }
+  
+  .project-desc {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+  }
+  
+  .project-tags {
+    font-size: 0.85rem;
+    color: #888;
+  }
+  
+  .title, .title2,
+  .about-container,
+  .projects-container, 
+  .contact-container, 
+  .contact-title {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 1s ease 0.4s forwards;
+}
+
+
+/* ABOUT PAGE */
+.about-container {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 6rem auto;
+  max-width: 100%;
+  padding-top: 180px;
+  padding-bottom: 0px;
+  padding-left: 80px;
+}
+
+.title2 {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  font-family: 'Parfumerie', cursive;
+  font-size: 150px;
+  top: 1%;
+  left: 40%;
+  line-height: 1;
+  padding-top: 40px;
+}
+
+.about-section {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center; 
+  margin-top: 2rem;
+  max-width: 1000px;
+  padding-left: 2rem;
+}
+
+.me-img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10;
+}
+
+.about-bio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-title {
+  font-size: 2em;
+  line-height: 1;
+}
+
+.about-text {
+  font-size: 1.2em;
+  color: #494b4f;
+  line-height: 1;
+}
+
+.featured-container {
+  position: absolute;
+  padding-top: 300px;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+.projects-container2 {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 10px;
+  max-width: 100%;
+}
+
+.featured-projs {
+  padding-top: 20%;
+  text-align: center;
+}
+
+.featured-title {
+  font-family: 'Eina01', sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+
+/* CONTACT PAGE */
+.contact-container {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 10%;
+}
+
+.contact-title {
+  font-family: 'Parfumerie', cursive;
+  font-size: 130px;
+  text-align: center;
+  color: #494b4f;
+}
+
+.contact-content {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+  min-width: 220px;
+}
+
+.contact-btn {
+  background-color: #494b4f;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-btn:hover {
+  background-color: #333;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #494b4f;
+  line-height: 1.6;
+}
+
+.contact-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.contact-right input,
+.contact-right textarea {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Eina01', sans-serif;
+  color: #494b4f;
+  padding: 0.8rem;
+  outline: none;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  border-color: #494b4f;
+  box-shadow: 0 0 0 1px #494b4f;
+}
+
+.contact-right button {
+  background-color: #494b4f;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-right button:hover {
+  background-color: #333;
+}
