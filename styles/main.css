@@ -489,10 +489,14 @@ html, body {
 }
 
 .project-overview, .project-purpose, .project-images {
-  position: absolute;
+  position: relative;
   z-index: 2;
   padding: 2rem;
   width: 90%;
+}
+
+.project-purpose {
+  padding-top: 0;
 }
 
 .ov-title{
@@ -539,10 +543,6 @@ html, body {
 
 
 
-.project-purpose {
-  padding-top: 35rem;
-}
-
 .purpose-columns {
   display: flex;
   justify-content: space-between;
@@ -553,11 +553,6 @@ html, body {
   flex: 1;
   padding: 1rem;
   border-radius: 8px;
-}
-
-
-.project-images {
-  padding-top: 76rem;
 }
 
 .main-image img {
@@ -583,4 +578,32 @@ html, body {
   height: auto;
   border-radius: 8px;
   align-items: center;
+}
+
+/* MOBILE IMGS */
+.proj-img2 {
+  width: 30%;
+  border-radius: 8px;
+}
+
+.main-img2 img {
+  width: 30%;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-gallery2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-gallery2 img {
+  width: 30%;
+  border-radius: 8px;
 }
