@@ -206,7 +206,7 @@ html, body {
 .title {
   position: absolute;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   font-family: 'Parfumerie', cursive;
   font-size: 150px;
@@ -276,7 +276,8 @@ html, body {
 .about-container,
 .projects-container, 
 .contact-container, 
-.contact-title, .projects-container3 {
+.contact-title, .projects-container3,
+.gallery-imgs {
   opacity: 0;
   transform: translateY(30px);
   animation: slideInUp 1s ease 0.4s forwards;
@@ -394,6 +395,19 @@ html, body {
   text-align: center;
   color: #494b4f;
 }
+
+/* .title {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  font-family: 'Parfumerie', cursive;
+  font-size: 150px;
+  top: 1%;
+  align-items: center;
+  line-height: 1;
+  padding-top: 30px;
+} */
 
 .contact-content {
   display: flex;
@@ -607,3 +621,18 @@ html, body {
   width: 30%;
   border-radius: 8px;
 }
+
+/* .gallery-imgs {
+  position: absolute;
+  width: 60rem;
+  height: 50rem;
+  z-index: 1;
+  padding-top: 19rem;
+  transform: translate(20%, 0%);
+}
+
+.gallery-imgs img {
+  width: 105%;
+  height: 145%;
+  z-index: 1;
+} */
